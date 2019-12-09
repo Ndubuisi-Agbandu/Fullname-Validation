@@ -1,6 +1,7 @@
 // Fullname validation
 function validateFullname() {
-	let fullName = document.getElementById('fullName').value; // Get the person's input.
+	let message;
+	let fullName = document.getElementById('fullName').value; // Get the person's input using the javscript event onkeyup.
 	let testPattern = /^([\w]{3,})+\s+([\w\s]{3,})+$/i; // The regExp for validating fullname.
 
 	// ([\w]{3,}) the first name should contain only letters and of length 3 or more
@@ -10,8 +11,7 @@ function validateFullname() {
 
 	
 	if (!testPattern.test(fullName)) {
-		// i already had a paragraph element with display of none so that the paragraph won't show.
-		// The HTML input element has a javascript event of onkeyup.  
+		// i already had a paragraph element with display of none so that the paragraph won't show.  
 		message = document.getElementById('fullNameErrorMessage').innerHTML = 'Please Enter Your Fullname ("First and last Name")';
 		message = document.getElementById('fullNameErrorMessage').style.display = 'block';
 		document.getElementById('fullName').focus();
