@@ -11,12 +11,25 @@ function validateFullname() {
 
 	
 	if (!testPattern.test(fullName)) {
-		// i already had a paragraph element with display of none so that the paragraph won't show.  
-		message = document.getElementById('fullNameErrorMessage').innerHTML = 'Please Enter Your Fullname ("First and last Name")';
-		message = document.getElementById('fullNameErrorMessage').style.display = 'block';
+		/* I already have an HTML paragraph element with an id called message and a display of none 
+		for the paragraph not to show automatically except when this function is triggered by the onkeyup event. */
+		
+		/* The message shows only when the 
+		1. The first name is less than 3
+		2. There is not space yet
+		3. The last has not been written and 
+		4. The last name is lesser than 3*/
+		
+		/*The HTML paragraph element with id="message" has no text in it save the one below.
+		Also it has a style display of none which changes to block when the user's input is not matching the 
+		test pattern.*/
+		message = document.getElementById('message').innerHTML = 'Please Enter Your Fullname ("First and last Name")';
+		message = document.getElementById('message').style.display = 'block';
 		document.getElementById('fullName').focus();
 		return false;
 	} else {
+		/* The HTML paragraph element with id="message" returns to style display of none when the user's input
+		matches the test pattern.*/
 		message = document.getElementById('fullNameErrorMessage').style.display = 'none';
 	}
 }
