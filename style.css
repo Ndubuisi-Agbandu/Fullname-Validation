@@ -7,3 +7,8 @@ input {
 	margin: 20px 0;
 	outline: none;
 }
+
+p {
+	color: red;
+	display: none;
+}
