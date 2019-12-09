@@ -3,12 +3,15 @@
 
   <head>
 		<title>Fullname Validation</title>
+		<link rel="stylesheet" href="assets/css/style.css">
+		<script src="assets/js/script.js"></script>
 	</head>
   
   <body>
     <form action="">
       <div>
-        <input type="text" placeholder="Enter Your Fullname" required>
+        <input type="text" placeholder="Enter Your Fullname" id="fullName" onkeyup="validateFullname()" required>
+				<p id="message" style="display: none; color: red;"></p> <!-- This paragraph will display my message to the user -->
       </div>
     </form>
   </body>
